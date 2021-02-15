@@ -204,6 +204,9 @@ footer p {
   flex-wrap: wrap;
   padding-top: 130px;
 }
+.message-content a {
+  color: #6a397d;
+}
 .message {
   font-family: 'Barrio', cursive;
 }
