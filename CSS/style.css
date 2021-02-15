@@ -1,0 +1,512 @@
+@charset "UTF-8";
+
+/* 共通部分
+----------------------------- */
+/* color *main:rgb(106, 57, 125)#6a397d
+         *sub:rgb(176, 200, 101)#b0c865
+         *main-pale:rgb(197, 178, 214)#c5b2d6
+        *sub-pale:rgb(225, 238, 193) #e1eec1*/
+html {
+    font-size: 100%;
+}
+body {
+    font-family: "ヒラギノ丸ゴ Pro W4", "Hiragino Maru Gothic Pro", sans-serif;
+    line-height: 1.7;
+    color: #432;
+}
+/*  font Yu Gothic Medium", "游ゴシック Medium", YuGothic, "游ゴシック体", "ヒラギノ角ゴ Pro W3", sans-serif  */
+a {
+    text-decoration: none;
+}
+img {
+    max-width:  100%
+}
+
+/*  背景  https://doodad.dev/pattern-generator/*/
+#home {
+  background:url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHhtbG5zOnhsaW5rPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5L3hsaW5rIiB3aWR0aD0iMTAwJSIgaGVpZ2h0PSIxMDAlIj48ZGVmcz48cGF0dGVybiBpZD0icGF0dGVybiIgd2lkdGg9IjQwIiBoZWlnaHQ9IjQwIiB2aWV3Qm94PSIwIDAgNDAsNDAiIHBhdHRlcm5Vbml0cz0idXNlclNwYWNlT25Vc2UiIHBhdHRlcm5UcmFuc2Zvcm09InJvdGF0ZSgxMzUpICI+PHJlY3QgaWQ9InBhdHRlcm4tYmFja2dyb3VuZCIgd2lkdGg9IjQwMCUiIGhlaWdodD0iNDAwJSIgZmlsbD0icmdiYSgyNTUsIDI1MCwgMjQwLDEpIj48L3JlY3Q+IDxjaXJjbGUgZmlsbD0icmdiYSgyNTQsIDIzNSwgMjAwLDEpIiBjeD0iMjAiIGN5PSIyMCIgcj0iMiI+PC9jaXJjbGU+PGNpcmNsZSBmaWxsPSJyZ2JhKDI1MSwgMjExLCAxNDEsMSkiIGN4PSIyMCIgY3k9IjIwIiByPSIxIj48L2NpcmNsZT48Y2lyY2xlIGZpbGw9InJnYmEoMjUxLCAyMTEsIDE0MSwxKSIgY3g9Ii0yMCIgY3k9IjIwIiByPSIxIj48L2NpcmNsZT48L3BhdHRlcm4+ICA8L2RlZnM+IDxyZWN0IGZpbGw9InVybCgjcGF0dGVybikiIGhlaWdodD0iMTAwJSIgd2lkdGg9IjEwMCUiPjwvcmVjdD48L3N2Zz4=");
+  min-height: 100vh;
+}
+.big-bg {
+  background-size: cover;
+  background-position: center top;
+  background-repeat: no-repeat;
+}
+.wrapper {
+  max-width: 1100px;
+  margin:0 auto;
+  padding: 0 4%;
+}
+
+.logo {
+  width: 320px;
+  margin-top: 30px;
+}
+.header-container {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  padding-bottom: 70px;
+}
+.position-fixed {
+  position: fixed;
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+.main-nav {
+  display: flex;
+  justify-content: space-between;
+  list-style: none;
+
+}
+.main-nav a {
+  background-color: #e1eec1;
+  margin: 25px 10px;
+  padding-left: 8px;
+  text-align: center;
+  top: 0;
+  /* ボタンを丸く、文字を真ん中に配置 */
+  width: 65px;
+  height: 65px;
+  border-radius: 50%;
+  line-height: 65px;
+  text-align: center;
+  display: inline-block;
+  font-size: 20px;
+  color: #b0c865
+
+}
+.main-nav a:hover {
+  background-color: rgba(197, 178, 214, .8);
+  transition: all 1s;
+  color: #6a397d;
+}
+
+footer {
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    padding: 15px 0;
+    width: 100%;
+    background-color: #e1eec1;
+}
+footer p {
+    color: #432;
+    font-size: 0.875rem;
+}
+.link-twitter {
+  margin-left: 20px;
+}
+.link-twitter :hover {
+  transition: all 1s;
+  color: #55acee;
+}
+.link-line :hover {
+  transition: all 1s;
+  color: #1dcd00;
+}
+/*sub-navi　Letter&Photo共通 */
+.position-unfixed {
+  display: flex;
+  justify-content: space-between; /* header部分*/
+  flex-wrap: wrap;
+}
+
+.title-bar {
+  margin-top: -10px;
+  align-items: center;
+}
+.title-bar-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #e1eec1;
+  border-radius: 50px;
+  flex-wrap: wrap;
+}
+.title {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+
+}
+.icon {
+  position: relative;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  line-height: 50px;
+  display: inline-block;
+  background-color: #b0c865;
+  font-size: 25px;
+}
+.icon :before {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  line-height: 40px;
+  display: inline-block;
+  line-height: 40px;
+  position: absolute;
+  padding: 0.1em;
+  color: white;
+  background: rgb(176, 200, 101);
+  font-weight: 800;/*アイコンの塗りつぶし*/
+  width: 40px;/*アイコンを囲む円の直径*/
+  text-align: center;
+  height: 40px;/*アイコンを囲む円の直径*/
+  line-height: 30px;/*アイコンの高さ*/
+  left: 0.2em;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+  transform: translateY(-50%);
+  border: solid 2px white;
+  border-radius: 50%;
+}
+.title-txt {
+  margin-left: 20px;
+  color: #6a397d;
+}
+.coment {
+  font-size: 16px;
+  margin-left: 32px;
+}
+.sub-navi  {
+  display: flex;
+  list-style: none;
+  padding-right: 40px;
+  padding-left: 40px;
+}
+.sub-navi a {
+  color: #b0c865;
+  font-size: 20px;
+}
+.sub-navi a:hover {
+  transition: all 1s;
+  color: #6a397d;
+  background-color: #c5b2d6;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  line-height: 50px;
+  text-align: center;
+  display: block;
+  font-size: 20px;
+  padding-left: 5px;
+
+}
+
+/* top-page */
+.message-container {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  padding-top: 130px;
+}
+.message {
+  font-family: 'Barrio', cursive;
+}
+.message h2 {
+  line-height: normal;
+  font-size: 20px;
+  text-align: center;
+}
+.message p {
+  font-weight: normal;
+  font-size: 16px;
+  line-height: 40px;
+  text-align: center;
+  }
+.illustration_home {
+  width: 520px;
+  }
+/* アニメーション  ※.illustration_home を.fadein以下に書いたら横並びにできなかった*/
+.fadein {
+      opacity: 0;
+      animation: fadein 6s ease forwards;
+  }
+  @keyframes fadein {
+      100% {  opacity: 1;}
+  }
+.txt01 {animation-delay: 1s;}
+.txt02 {animation-delay: 3s;}
+.txt03 {animation-delay: 6s;}
+.txt04 {animation-delay: 9s;}
+.txt05 {animation-delay: 12s;}
+.txt06 {animation-delay: 15s;}
+.txt07 {animation-delay: 18s;}
+.txt08 {animation-delay: 21s;}
+.txt09 {animation-delay: 24s;}
+.txt10 {animation-delay: 27s;}
+.txt11 {animation-delay: 30s;}
+}
+
+/*  Profile  */
+#profile {
+
+}
+.profile {
+  background-color: #c5b2d6;
+  margin-top: 25px;
+  margin-bottom: 15px;
+  width: 550px;
+  height: 550px;
+  border-radius: 50%;
+  line-height: 24px;
+  text-align: center;
+}
+.profile h1 {
+  color: #6a397d;
+  text-align: center;
+  margin-bottom: 10px;
+}
+.profile p {
+  text-align: center;
+}
+.name {
+  font-weight: bold;
+}
+.profile-container {
+  justify-content: space-between;
+  top: 0;
+  padding-top: 40px;
+  text-align: center;
+  margin-bottom: 10px;
+}
+.illustration-profile {
+  width: 180px;
+  height: 180px;
+  border-radius: 50%;
+  background-color: #fff;
+  margin-bottom: 10px;
+}
+.link {
+  font-size: 18px;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin: 20px;
+}
+.btn-twitter {
+  font-size: 18px;
+  margin-right: 20px;
+  color: #6a397d;
+}
+.btn-twitter :hover {
+  transition: all 1s;
+  color: #55acee;
+}
+.btn-line {
+  font-size: 18px;
+  margin-right: 20px;
+  color: #6a397d;
+}
+.btn-line :hover {
+  transition: all 1s;
+  color: #1dcd00;
+}
+/* Letter */
+.letter {
+    position: relative;
+    padding: 14px;/* 柄の面積 */
+    width: 900px;/* 封筒の幅 */
+    background: -webkit-repeating-linear-gradient(135deg, #6a397d 0px, #6a397d 20px, #c5b2d6 20px, #c5b2d6 40px, #b0c865 40px, #b0c865 60px, #c5b2d6 60px, #c5b2d6 80px);
+    background: repeating-linear-gradient(135deg, #6a397d 0px, #6a397d 20px, #c5b2d6 20px, #c5b2d6 40px, #b0c865 40px, #b0c865 60px, #c5b2d6 60px, #c5b2d6 80px);
+    -webkit-box-shadow: 0 0 6px rgba(0,0,0,0.6);
+    -moz-box-shadow: 0 0 6px rgba(0,0,0,0.6);
+    box-shadow: 0 0 6px rgba(0,0,0,0.6);
+    margin: 50px auto;
+}
+.letter section{
+    padding: 30px;
+    background: #fff;
+    color: #430;
+    font-size:16px;
+}
+.letter h2{
+    margin: 0;
+}
+.letter h2 a{
+    margin-right: 0;
+    color: #430;
+    font-size: 19px;
+}
+.fas {
+  margin-left: 16px;
+}
+.letter section p{
+    margin: 16px 0 0;
+    line-height: 1.75;
+}
+.letter section p a{
+    display: block;
+    margin: 6px 0 0;
+    color: #27c;
+}
+ul {
+    text-indent: -0.5em;
+  }
+ul li {
+     margin-left: 2em;
+   }
+.letter .stamp{/* 切手の位置 */
+    float: right;
+    margin:0 0 20px 20px;
+    padding: 10px;
+    background: #fff;
+    background: radial-gradient(at center, transparent, transparent 5px, #fff 6px);
+    background: -webkit-gradient(radial, center center, 5, center center, 6, from(#fff), color-stop(100%,#fff), color-stop(0%,rgba(255,255,255,0)));
+    background-position: -10px -10px;
+    background-size: 20px 20px;
+    -webkit-filter: drop-shadow(0 1px 2px rgba(0,0,0,0.4));
+    filter: drop-shadow(0 1px 2px rgba(0,0,0,0.4));
+
+}
+.stamp {
+  width: 17%;    /* 横幅を割合で指定 */
+  height: auto;  /* 高さは自動指定 */
+}
+.letter time{
+    position: absolute;/* 消印の位置 */
+    top: 150px;/* 消印の位置 */
+    right: 90px;/* 消印の位置 */
+    display: inline-block;
+    padding: 10px;
+    width: 100px;
+    height: 100px;
+    border: 5px double #430;
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+    border-radius: 50%;
+    color: #430;
+    text-align: center;
+    font-size: 16px;
+    font-family: 'Bree Serif', serif;
+    line-height: 60px;/* 日付の位置 */
+    -webkit-transform: rotate(-16deg);
+    -ms-transform: rotate(-16deg);
+    transform: rotate(-16deg);
+}
+.letter time:before{
+    position: absolute;
+    top: 10%;
+    display: block;
+    padding: 0 0 8px;
+    width: 82%;
+    border-bottom:1px solid #430;
+    content: 'Posted at :';
+    font-size: 14px;
+    line-height: 1;
+}
+.letter time:after{
+    position: absolute;
+    bottom: 10%;
+    display: block;
+    padding: 6px 0 0;
+    width: 82%;
+    border-top: 1px solid #430;
+    content: 'from TOMOTONE';
+    font-size: 13px;
+    line-height: 1;
+}
+.letter_navi ul {
+  display: flex;
+  flex-direction: row-reverse;
+  flex-wrap: wrap-reverse;
+  justify-content: space-around;
+  list-style: disc;
+}
+
+/* Photo */
+
+/* Photo  スマホ画面は幅620xがちょうどいい */
+.photo-content {
+  text-align: center;
+}
+.photo-container {
+  display: flex;
+  justify-content: flex-start;
+  margin: 50px 20px;
+}
+.photo-container h2 {
+  color: rgb(106, 57, 125);
+}
+.v_line_fix {
+  margin: 0 20px;
+  width: 1px;
+  height: ; /* ←.polaroidのheightに応じて変化 */
+  background-color: #c5b2d6;
+}
+.photo-img-content {
+  display: flex;
+  justify-content: flex-start;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+
+.polaroid {
+  position: relative;
+  margin: 10px 20px;
+  width: 220px; /* 写真の幅 ＋　20px */
+  height: 250px;
+  max-width:100%;
+  border: 10px solid rgb(197, 178, 214);/* ポラロイドのフチ幅を指定 */
+  border-bottom: 45px solid rgb(197, 178, 214);/* ポラロイドのフチ下の幅を指定 */
+  -webkit-box-shadow: 3px 3px 3px #777;
+     -moz-box-shadow: 3px 3px 3px #777;
+          box-shadow: 3px 3px 3px #777;
+}
+.kopolaroid {
+  position: relative;
+  box-sizing: border-box;
+  width: 100%;
+  bottom: 5px;/* ポラロイドのフチ下の幅をマイナスで指定 */
+  margin-left: auto;
+  margin-right: auto;
+  font-family: 'Barrio', cursive;/* フォントの書体 */
+  color: #756F61;/* フォントの色 */
+  font-size:1em;/* フォントサイズ */
+}
+
+
+/* スライドショー */
+ /*<style type="text/css">
+ /*=== 画像の表示エリア =================================
+ .slide {
+   position   : relative;
+   overflow   : hidden;
+                     /* 画像のサイズに合わせて変更ください */
+   width      : 200px;
+   height     : 200px;
+   margin     : auto;
+   /* サンプルは中央寄せの背景：白  background : #fff; */
+ }
+
+  /*=== 画像の設定 ======================================= */
+ .slide img {
+   display    : block;
+   position   : absolute;
+                       /* 画像のサイズを表示エリアに合せる */
+   width      : inherit;
+   height     : inherit;
+   opacity    : 0;
+   animation  : slideAnime 35s ease infinite;
+ }
+
+  /*=== スライドのアニメーションを段差で開始する ========= */
+ .slide img:nth-of-type(1) { animation-delay: 0s }
+ .slide img:nth-of-type(2) { animation-delay: 7s }
+ .slide img:nth-of-type(3) { animation-delay: 14s }
+ .slide img:nth-of-type(4) { animation-delay: 21s }
+ .slide img:nth-of-type(5) { animation-delay: 28s }
+
+  /*=== スライドのアニメーション ========================= */
+ @keyframes slideAnime{
+    0% { opacity: 0; transform: rotateX(90deg) }
+    3% { opacity: 1; transform: rotateX(0deg)  }
+   17% { opacity: 1; transform: rotateX(0deg)  }
+   20% { opacity: 0; transform: rotateX(90deg) }
+  100% { opacity: 0; transform: rotateX(90deg) }
+ }
+  /* </style> */
